@@ -1,0 +1,46 @@
+MemTotal:         688576 kB     总内存
+MemFree:          153736 kB     空闲内存
+MemAvailable:     339884 kB     可用内存
+Buffers:              16 kB     给文件的缓冲大小
+Cached:           267672 kB     高速缓冲存储器
+SwapCached:           36 kB     被高速缓冲存储用的交换空间的大小
+Active:           222900 kB     活跃使用中的高速缓冲存储器页面文件大小
+Inactive:         123700 kB     不经常使用中的告诉缓冲存储器文件大小
+Active(anon):      31800 kB     活跃的匿名内存（进程中堆上分配的内存,是用malloc分配的内存）
+Inactive(anon):    57272 kB     不活跃的匿名内存
+Active(file):     191100 kB     活跃的file内存
+Inactive(file):    66428 kB　　　　不活跃的file内存     
+Unevictable:           0 kB　　　　不能被释放的内存页
+Mlocked:               0 kB　　　　mlock()系统调用锁定的内存大小
+SwapTotal:       2097148 kB　　　　交换空间总大小
+SwapFree:        2096884 kB　　　　空闲交换空间
+Dirty:                 0 kB　　　　等待被写回到磁盘的大小
+Writeback:             0 kB　　　　正在被写回的大小
+AnonPages:         78876 kB       未映射页的大小
+Mapped:            28556 kB　　　　设备和文件映射大小
+Shmem:             10160 kB　　　　已经被分配的共享内存大小
+Slab:             102916 kB　　　　内核数据结构缓存大小
+SReclaimable:      49616 kB　　　 可收回slab的大小
+SUnreclaim:        53300 kB　　　 不可回收的slab的大小
+KernelStack:        4416 kB      kernel消耗的内存
+PageTables:         6028 kB      管理内存分页的索引表的大小
+NFS_Unstable:          0 kB      不稳定页表的大小
+Bounce:                0 kB      在低端内存中分配一个临时buffer作为跳转，把位于高端内存的缓存数据复制到此处消耗的内存
+WritebackTmp:          0 kB      USE用于临时写回缓冲区的内存
+CommitLimit:     2441436 kB      系统实际可分配内存总量
+Committed_AS:     308028 kB      当前已分配的内存总量
+VmallocTotal:   34359738367 kB   虚拟内存大小
+VmallocUsed:      179588 kB　　　 已经被使用的虚拟内存大小
+VmallocChunk:   34359310332 kB   malloc 可分配的最大的逻辑连续的内存大小
+HardwareCorrupted:     0 kB      删除掉的内存页的总大小(当系统检测到内存的硬件故障时)
+AnonHugePages:      6144 kB      匿名 HugePages 数量
+CmaTotal:              0 kB　　　 总的连续可用内存
+CmaFree:               0 kB      空闲的连续内存
+HugePages_Total:       0　　　　  预留HugePages的总个数 
+HugePages_Free:        0　　　　　池中尚未分配的 HugePages 数量
+HugePages_Rsvd:        0      　 表示池中已经被应用程序分配但尚未使用的 HugePages 数量
+HugePages_Surp:        0　　　　  这个值得意思是当开始配置了20个大页，现在修改配置为16，那么这个参数就会显示为4，一般不修改配置，这个值都是0
+Hugepagesize:       2048 kB     每个大页的大小
+DirectMap4k:      108416 kB　　　映射TLB为4kB的内存数量
+DirectMap2M:      940032 kB　　　映射TLB为2M的内存数量
+DirectMap1G:           0 kB     映射TLB为1G的内存数量
