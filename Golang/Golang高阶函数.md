@@ -5,7 +5,7 @@
 
 ## 举例
 ### 函数作为参数
-```
+```golang
 package main
 
 import "fmt"
@@ -29,7 +29,7 @@ func main() {
 ```
 
 ### 函数作为返回值
-```
+```golang
 package main
 
 import "fmt"
@@ -72,7 +72,7 @@ func main() {
 }
 ```
 输出结果
-```
+```golang
 need_prefix: [prefix_aaa prefix_bbb prefix_ccc]
 need_suffix: [AAA_suffix BBB_suffix CCC_suffix]
 ```
@@ -80,7 +80,7 @@ need_suffix: [AAA_suffix BBB_suffix CCC_suffix]
 ### 两者结合起来
 `衣服，交通工具，水果分类`
 #### 定义一个结构体
-```
+```golang
 type Commodity struct {
 	Name string
 	Type string
@@ -89,14 +89,14 @@ type Cds []*Commodity
 ```
 #### 自定义结构体的String()
 先看一下没有自定义结构体的String()，打印出来的结果
-```
+```golang
 [0xc0000ba000 0xc0000ba020 0xc0000ba040 0xc0000ba060 0xc0000ba080 0xc0000ba0a0]
 map[clothes:[] fruit:[] others:[] transportation:[]]
 map[clothes:[0xc0000ba080 0xc0000ba0a0] fruit:[0xc0000ba000 0xc0000ba020] others:[] transportation:[0xc0000ba040 0xc0000ba060]]
 all fruit: [0xc0000ba000 0xc0000ba020]
 ```
 全都是地址，所以我们需要实现自定义结构体的String()
-```
+```golang
 func (cd *Commodity) String() string {
 	return cd.Type + "," + cd.Name
 }
@@ -112,7 +112,7 @@ func (cds Cds) String() string {
 }
 ```
 再看下打印结果,顺眼多了
-```
+```golang
 fruit,apple | fruit,banana | transportation,car | transportation,bike | clothes,T-shirt | clothes,skirt | 
 map[clothes: fruit: others: transportation:]
 map[clothes:clothes,T-shirt | clothes,skirt |  fruit:fruit,apple | fruit,banana |  others: transportation:transportation,car | transportation,bike | ]
@@ -120,7 +120,7 @@ all fruit: fruit,apple | fruit,banana |
 ```
 
 定一个函数，参数是用来处理每一个结构体函数，这样可以省去我们多次的`for`遍历
-```
+```golang
 func (cds Cds) process(f func(cd *Commodity)) {
 	for _, v := range cds {
 		f(v)
@@ -128,7 +128,7 @@ func (cds Cds) process(f func(cd *Commodity)) {
 }
 ```
 正常情况下我们的输入是一串没有区分类别的数据，这种情况下我们肯定是需要去做分类的，所以我们定义个自动分类的函数
-```
+```golang
 func classifier(types []string) (func(cd *Commodity), map[string]Cds) {
 	result := make(map[string]Cds)
 
@@ -150,7 +150,7 @@ func classifier(types []string) (func(cd *Commodity), map[string]Cds) {
 
 ```
 除了分类后，我们有时候可能需要在一大堆未分类的数据中找到我们需要的某一种类型，所以我们还需要定义一个查找函数
-```
+```golang
 func (cds Cds) findType(f func(cd *Commodity) bool) Cds {
 	result := make(Cds, 0)
 
@@ -164,7 +164,7 @@ func (cds Cds) findType(f func(cd *Commodity) bool) Cds {
 
 ```
 完整代码
-```
+```golang
 package main
 
 import "fmt"
